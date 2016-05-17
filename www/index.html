@@ -110,6 +110,11 @@
       <span class="trn" data-trn-key="Legal Conditions">Condiciones legales</span>
     </ons-list-item>
     
+	<ons-list-item onclick="menu.setMainPage('alergenos.html', {closeMenu: true})" class="bottom-menu-item">
+      <ons-icon icon="ion-medkit"></ons-icon> 
+      <span class="trn" data-trn-key="Alérgenos">Alérgenos</span>
+    </ons-list-item>
+	
     <ons-list-item onclick="logout();" class="bottom-menu-item logout-menu">
       <ons-icon icon="ion-log-out"></ons-icon> 
       <span class="trn" data-trn-key="logout">Logout</span>
@@ -1481,7 +1486,7 @@
 </ons-navigator> 
 </script>
 
-<!-- ********** START ADD IFRAME AT MENU ********** -->
+<!-- ********** START CONDICIONES LEGALES MENU ********** -->
 <script type="text/ons-template" id="legal_conditions.html">   
 <ons-navigator title="Navigator" var="sNavigator"> 
 	<ons-page id="page-legal-conditions">
@@ -1493,7 +1498,7 @@
 			</ons-toolbar-button>        
 		</div> 
          
-		<div class="center white"><span id="search-text" class="trn" data-trn-key="Condiciones Legales">Legal Conditions</span></div>                  
+		<div class="center white"><span id="search-text" class="trn" data-trn-key="Legal Conditions">Legal Conditions</span></div>                  
 	</ons-toolbar>
    		   
 		<div class="wrapper center" >
@@ -1670,14 +1675,41 @@
 			<p style="text-align: justify;"><u>Actividad de La Olla Chica:</u> el desarrollo de las actividades de intermediación en la relación entre los Compradores y Restaurantes para la creación, localización y comunicación de ofertas, promociones y descuentos de los productos y servicios comercializados por los Restaurantes, así como la monetización de servicios de valor añadido en torno a dicha relación.</p>
 			<p style="text-align: justify;">ANTONIO JESÚS MÁRQUEZ</p>
 			<p style="text-align: justify;">Versión: abril de 2016.</p>
-   </div>
-     
-       
-		</div>	
+		</div>  
 	</ons-page>
 </ons-navigator> 
 </script>
-<!-- ********** END ADD IFRAME AT MENU ********** -->
+<!-- ********** END CONDICIONES LEGALES MENU ********** -->
+
+<!-- ********** START ALERGENOS ********** -->
+<script type="text/ons-template" id="alergenos.html">   
+<ons-navigator title="Navigator" var="sNavigator"> 
+	<ons-page id="page-alergenos">
+	<ons-toolbar>     
+   
+		<div class="left">
+			<ons-toolbar-button onclick="setHome();">
+				<ons-icon icon="fa-chevron-left"></ons-icon>
+			</ons-toolbar-button>        
+		</div> 
+         
+		<div class="center white"><span id="search-text" class="trn" data-trn-key="Alergenos">Alérgenos</span></div>                  
+	</ons-toolbar>
+   		   
+		<div class="wrapper center">
+			<p style="text-align: justify;"><strong>ANTONIO JESUS MARQUEZ</strong> (<em>La Olla Chica</em>) es el administrador de una plataforma o espacio virtual (<a href="http://www.laollachica.es">www.laollachica.es</a>) que pone a disposición de sus usuarios (los Compradores) ofertas de productos y servicios (las Ofertas) de un gran número de restaurantes (los Restaurantes), permitiendo a los usuarios realizar pedidos de comida a domicilio por Internet (a través de la Web) o por teléfono. <em>La Olla Chica</em> no realiza las Ofertas sino que en todo caso actúa en nombre y por cuenta de los Restaurantes oferentes. <em>La Olla Chica</em> no es el vendedor ni el propietario de los productos o servicios ofrecidos en la Web, ni tiene posesión de ellos, sino que únicamente interviene como mero intermediario en el perfeccionamiento de las operaciones de venta realizadas directamente entre los Compradores y los Restaurantes oferentes de los productos y/o servicios (los Productos).</p>
+			<p style="text-align: justify;">De conformidad con el Reglamento (UE) nº 1169/2011, del Parlamento Europeo y del Consejo, de 25 de octubre de 2011 sobre información alimentaria facilitada al consumidor (en adelante el Reglamento UE), y en el Real Decreto 126/2015, de 27 de febrero, por el que se aprueba la norma general relativa a la información alimentaria de los alimentos que se presenten sin envasar para la venta al consumidor final y a las colectividades, de los envasados en los lugares de venta a petición del comprador y de los envasados por los titulares del comercio al por menor (en adelante el Real Decreto), son los Restaurantes los responsables de facilitar a los Compradores la información alimentaria obligatoria sobre los Productos ofertados (lo que incluye la presencia de alérgenos de declaración obligatoria prevista en Anexo II del Reglamento UE y descripción de ingredientes). Dicha información estará disponible antes de que se realice la compra y figurará en la Web o se facilitará a través de otros medios apropiados claramente determinados por los Restaurantes. Si se utilizan otros medios apropiados, la información alimentaria obligatoria se dará sin que los Restaurantes impongan a los Compradores costes suplementarios. Todas las menciones obligatorias deberán estar disponibles al Comprador en el momento de la entrega.</p>
+			<p style="text-align: justify;">Por tanto, la información alimentaria obligatoria relativa a los Productos deberá ser facilitada gratuitamente por los Restaurantes, siendo éstos los responsables de la presencia, veracidad, exactitud y conformidad a la normativa aplicable de los mismos. En ningún caso <em>La Olla Chica</em> será responsable de dicha información.</p>
+			<p style="text-align: justify;"><em>La Olla Chica</em> tratará de reproducir con exactitud en la Web los nombres de los Productos, su descripción, precio, advertencias alérgicas y de temperatura y demás información de los Productos facilitada por los Restaurantes de los menús facilitados por los Restaurantes (“Información de los Productos”). No obstante, <em>La Olla Chica</em> no garantiza que la información sobre los Productos recogida en la Web sea correcta, precisa o completa. Es responsabilidad exclusiva de los Restaurantes proporcionar la información de los Productos y asegurarse de que es exacta y se encuentra actualizada. El Comprador que tuviera cualquier duda sobre las advertencias alérgicas, los ingredientes o cualquier otra información de los Productos, deberá dirigirse directamente al Restaurante oferente antes de efectuar el pedido.</p>
+			<p style="text-align: justify;">La relación jurídica correspondiente a la compraventa de los Productos es entre el Comprador y el Restaurante que realiza su pedido. <em>La Olla Chica</em> no tiene ningún control sobre los Restaurantes ni sobre los Productos o servicios que ofrecen, y en consecuencia <em>La Olla Chica</em> no asume ninguna responsabilidad que pudiera corresponder a los Restaurantes.</p>
+		</div>  
+	</ons-page>
+</ons-navigator> 
+</script>
+<!-- ********** END ALERGENOS ********** -->
+
+
+
 
 
 <script type="text/ons-template" id="locationOptions.html">    
