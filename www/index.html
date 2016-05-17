@@ -105,9 +105,9 @@
       <span class="trn" data-trn-key="settings">Settings</span>
     </ons-list-item>   
 
-	<ons-list-item onclick="menu.setMainPage('http://laollachica.es/store/page/terminos-y-condiciones', {closeMenu: true})" class="bottom-menu-item">
+	<ons-list-item onclick="menu.setMainPage('legal_conditions.html', {closeMenu: true})" class="bottom-menu-item">
       <ons-icon icon="ion-gear-a"></ons-icon> 
-      <span class="trn" data-trn-key="settings">Legal Conditions</span>
+      <span class="trn" data-trn-key="browse">Legal Conditions</span>
     </ons-list-item>
     
     <ons-list-item onclick="logout();" class="bottom-menu-item logout-menu">
@@ -1481,6 +1481,35 @@
 </ons-navigator> 
 </script>
 
+<!-- ********** START ADD IFRAME AT MENU ********** -->
+<script type="text/ons-template" id="legal_conditions.html">   
+<ons-navigator title="Navigator" var="sNavigator"> 
+<ons-page id="page-settings">
+   <ons-toolbar>     
+   
+    <div class="left">
+     <ons-toolbar-button onclick="setHome();">
+        <ons-icon icon="fa-chevron-left"></ons-icon>
+     </ons-toolbar-button>        
+    </div> 
+         
+    <div class="center white"><span id="search-text" class="trn" data-trn-key="browse">Legal Conditions</span></div>                  
+   </ons-toolbar>
+   		   
+   <div class="wrapper">
+		<iframe src="http://laollachica.es/store/page/terminos-y-condiciones" width="100%" height="auto"> 
+			Puedes leer nuestras <a HREF="http://laollachica.es/store/page/terminos-y-condiciones">condiciones legales</a>
+		</iframe>
+   </div>
+     
+       
+</ons-page>
+</ons-navigator> 
+</script>
+
+<!-- ********** END ADD IFRAME AT MENU ********** -->
+
+
 <script type="text/ons-template" id="locationOptions.html">    
   <ons-dialog var="locationDialog" style="width:90%;height:350px;" cancelable  >
 
@@ -1501,6 +1530,11 @@
   </ons-page>
   </ons-dialog> 
 </script>
+
+
+
+
+
 
 <script type="text/ons-template" id="addressPopup.html">    
   <ons-dialog var="addressDialog" style="width:90%;height:200px;" cancelable  >
