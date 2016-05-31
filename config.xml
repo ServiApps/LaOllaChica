@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "laollachica.cminteractive.eu"
-    version   = "1.2.3">
+    version   = "1.0.1">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
@@ -10,7 +10,24 @@
     <author email="cminteractivesl@gmail.com" href="http://www.laollachica.es">
         La Olla Chica
     </author>
-    <icon src="icon.png" />           
+    <icon src="icon.png" />
+	<platform name = 'ios'>
+		<icon src='icon-40.png' platform='ios' width='40' height='40' />
+		<icon src='icon-40@2x.png' platform='ios' width='80' height='80' />
+		<icon src='icon-60.png' platform='ios' width='60' height='60' />
+		<icon src='icon-60@2x.png' platform='ios' width='120' height='120' />
+		<icon src='icon-60@3x.png' platform='ios' width='180' height='180' />
+		<icon src='icon-72@.png' platform='ios' width='72' height='72' />
+		<icon src='icon-72@2x.png' platform='ios' width='144' height='144' />
+		<icon src='icon-76.png' platform='ios' width='76' height='76' />
+		<icon src='icon-76@2x.png' platform='ios' width='152' height='152' />
+		<icon src='icon-small.png' platform='ios' width='29' height='29' />
+		<icon src='icon-small@2x.png' platform='ios' width='58' height='58' />
+		<icon src='icon57.png' platform='ios' width='57' height='57' />
+		<icon src='icon57@2x.png' platform='ios' width='114' height='114' />
+	</platform>
+
+	
     <content src="index.html" />
                
 	<preference name="orientation" value="portrait" />
@@ -18,7 +35,7 @@
 	<preference name="permissions" value="none"/>
 		
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <gap:plugin name="phonegap-plugin-push" source="npm" spec="1.5.3" />
+    <gap:plugin name="phonegap-plugin-push" source="npm" version="1.5.3" />
     <gap:plugin name="com.paypal.cordova.mobilesdk" version="3.1.2" />            	
     <gap:plugin name="cordova-plugin-device" />		
 	<gap:plugin name="cordova-plugin-inappbrowser" />		
@@ -27,6 +44,9 @@
 	<gap:plugin name="cordova-plugin-network-information" />
 
 	<gap:splash src="splash.png" />
+	<platform name = 'ios'>
+		<splash src='splash-568h' platform='ios' width="320" height="480"/>
+	</platform>
 	<preference name="AutoHideSplashScreen" value="false" />  	
     <preference name="SplashScreenDelay" value="10000" />    
 	

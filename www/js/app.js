@@ -1677,7 +1677,7 @@ function addToCart()
 	   	   	   		proceed=false;
 	   	   	   			   	   	   			   	   	   		
 	   	   	   		$(".require_addon_"+required_addon_id).after( 
-					"<span class=\"small-red-text\">Debe seleccionar al menos una de las opciones - "+required_addon_name 
+					"<span class=\"small-red-text\">You must select at least one addon - "+required_addon_name 
 					+'</span');
 	   	   	   	}
 			}
