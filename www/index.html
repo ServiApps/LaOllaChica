@@ -135,12 +135,12 @@
 	
 		<ons-list>
 			<ons-list-item modifier="chevron" onclick="kNavigator.pushPage('legales.html', {closeMenu: true})" class="bottom-menu-item">
-				<div class="center" style="font-size: 70%;>
+				<div class="center" style="font-size: 80%;>
 					<ons-icon icon="ion-briefcase"> Términos y Condiciones</ons-icon> 
 				</div>
 			</ons-list-item>
-			<ons-list-item modifier="chevron" page="alergenos.html">
-				<div class="center" style="font-size: 70%;>
+			<ons-list-item modifier="chevron" onclick="kNavigator.pushPage('alergenos.html', {closeMenu: true})" class="bottom-menu-item">
+				<div class="center" style="font-size: 80%;>
 					<ons-icon icon="ion-medkit"> Información sobre Alergenos</ons-icon>
 				</div>
 			</ons-list-item>
@@ -152,7 +152,17 @@
 <!-- ********** TAB CONDICIONES LEGALES ********** -->
 <script type="text/ons-template" id="legales.html">   
 
-	<ons-page id="page-legales">	
+	<ons-page id="page-legales">
+		<ons-toolbar>
+			<div class="left">
+				<ons-toolbar-button onclick="setHome();">
+					<ons-icon icon="fa-chevron-left"></ons-icon>
+				</ons-toolbar-button>        
+			</div>		
+
+			<div class="center white"><span id="search-text" class="trn" data-trn-key="Términos y condiciones">Términos y condiciones</span></div> 
+		</ons-toolbar>
+
 			<div class="wrapper center" style="margin: 5px;">
 				<h2>CONDICIONES GENERALES DE ACCESO Y DE USO PARA LOS USUARIOS DE LA WEB “LAOLLACHICA.ES”</h2>
 				<h3>Objeto y generalidades</h3>
@@ -333,7 +343,17 @@
 <!-- ********** TAB ALERGENOS ********** -->
 <script type="text/ons-template" id="alergenos.html">   
 
-	<ons-page id="page-alergenos">		
+	<ons-page id="page-alergenos">
+		<ons-toolbar>
+			<div class="left">
+				<ons-toolbar-button onclick="setHome();">
+					<ons-icon icon="fa-chevron-left"></ons-icon>
+				</ons-toolbar-button>        
+			</div>		
+
+			<div class="center white"><span id="search-text" class="trn" data-trn-key="Información sobre alérgenos">Información sobre alérgenos</span></div> 
+		</ons-toolbar>
+	
 			<div class="wrapper center" style="margin: 5px;">
 				<p style="text-align: justify;"><strong>ANTONIO JESUS MARQUEZ</strong> (<em>La Olla Chica</em>) es el administrador de una plataforma o espacio virtual (<a href="http://www.laollachica.es">www.laollachica.es</a>) que pone a disposición de sus usuarios (los Compradores) ofertas de productos y servicios (las Ofertas) de un gran número de restaurantes (los Restaurantes), permitiendo a los usuarios realizar pedidos de comida a domicilio por Internet (a través de la Web) o por teléfono. <em>La Olla Chica</em> no realiza las Ofertas sino que en todo caso actúa en nombre y por cuenta de los Restaurantes oferentes. <em>La Olla Chica</em> no es el vendedor ni el propietario de los productos o servicios ofrecidos en la Web, ni tiene posesión de ellos, sino que únicamente interviene como mero intermediario en el perfeccionamiento de las operaciones de venta realizadas directamente entre los Compradores y los Restaurantes oferentes de los productos y/o servicios (los Productos).</p>
 				<p style="text-align: justify;">De conformidad con el Reglamento (UE) nº 1169/2011, del Parlamento Europeo y del Consejo, de 25 de octubre de 2011 sobre información alimentaria facilitada al consumidor (en adelante el Reglamento UE), y en el Real Decreto 126/2015, de 27 de febrero, por el que se aprueba la norma general relativa a la información alimentaria de los alimentos que se presenten sin envasar para la venta al consumidor final y a las colectividades, de los envasados en los lugares de venta a petición del comprador y de los envasados por los titulares del comercio al por menor (en adelante el Real Decreto), son los Restaurantes los responsables de facilitar a los Compradores la información alimentaria obligatoria sobre los Productos ofertados (lo que incluye la presencia de alérgenos de declaración obligatoria prevista en Anexo II del Reglamento UE y descripción de ingredientes). Dicha información estará disponible antes de que se realice la compra y figurará en la Web o se facilitará a través de otros medios apropiados claramente determinados por los Restaurantes. Si se utilizan otros medios apropiados, la información alimentaria obligatoria se dará sin que los Restaurantes impongan a los Compradores costes suplementarios. Todas las menciones obligatorias deberán estar disponibles al Comprador en el momento de la entrega.</p>
