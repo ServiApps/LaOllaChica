@@ -120,32 +120,33 @@
 </script>
 
 <!-- ********** START INFORMACION ********** -->
-<script type="text/ons-template" id="info.html">   
-<ons-page id="page-informacion" >
-	<ons-toolbar>
-		<div class="left">
-			<ons-toolbar-button onclick="setHome();">
-				<ons-icon icon="fa-chevron-left"></ons-icon>
-			</ons-toolbar-button>        
-		</div>		
+<script type="text/ons-template" id="info.html">
+<ons-navigator title="Navigator" var="kNavigator">   
+	<ons-page id="page-informacion" >
+		<ons-toolbar>
+			<div class="left">
+				<ons-toolbar-button onclick="setHome();">
+					<ons-icon icon="fa-chevron-left"></ons-icon>
+				</ons-toolbar-button>        
+			</div>		
 
-		<div class="center white"><span id="search-text" class="trn" data-trn-key="Info">Información</span></div> 
-	</ons-toolbar>
+			<div class="center white"><span id="search-text" class="trn" data-trn-key="Info">Información</span></div> 
+		</ons-toolbar>
 	
-	<ons-list>
-		<ons-list-item modifier="chevron" page="legales.html">
-			<div class="center" style="font-size: 70%;>
-				<ons-icon icon="ion-briefcase"> Términos y Condiciones</ons-icon> 
-			</div>
-		</ons-list-item>
-		<ons-list-item modifier="chevron" page="alergenos.html">
-			<div class="center" style="font-size: 70%;>
-				<ons-icon icon="ion-medkit"> Información sobre Alergenos</ons-icon>
-			</div>
-		</ons-list-item>
-    </ons-list>
-</ons-page>
- 
+		<ons-list>
+			<ons-list-item modifier="chevron" page="legales.html">
+				<div class="center" style="font-size: 70%;>
+					<ons-icon icon="ion-briefcase"> Términos y Condiciones</ons-icon> 
+				</div>
+			</ons-list-item>
+			<ons-list-item modifier="chevron" page="alergenos.html">
+				<div class="center" style="font-size: 70%;>
+					<ons-icon icon="ion-medkit"> Información sobre Alergenos</ons-icon>
+				</div>
+			</ons-list-item>
+		</ons-list>
+	</ons-page>
+ </ons-navigator>
 </script>
 
 <!-- ********** TAB CONDICIONES LEGALES ********** -->
