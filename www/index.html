@@ -151,14 +151,9 @@
 
 <!-- ********** TAB CONDICIONES LEGALES ********** -->
 <script type="text/ons-template" id="legales.html">   
-<ons-navigator title="Navigator" var="kNavigator"> 
 	<ons-page id="page-legales">
 		<ons-toolbar>
-			<div class="left">   
-				<ons-toolbar-button onclick="kNavigator.pushPage('info.html', {closeMenu: true})" class="bottom-menu-item">
-					<ons-icon icon="fa-chevron-left"></ons-icon>
-				</ons-toolbar-button>        
-			</div>		
+			<div class="left"><ons-back-button></ons-back-button></div>
 
 			<div class="center white"><span id="search-text" class="trn" data-trn-key="Términos y condiciones">Términos y condiciones</span></div> 
 		</ons-toolbar>
@@ -335,21 +330,15 @@
 				<p style="text-align: justify;">ANTONIO JESÚS MÁRQUEZ</p>
 				<p style="text-align: justify;">Versión: abril de 2016.</p>
 			</div>  
-	</ons-page>
-</ons-navigator>			
+	</ons-page>		
 </script>
 
 
 <!-- ********** TAB ALERGENOS ********** -->
 <script type="text/ons-template" id="alergenos.html">   
-<ons-navigator title="Navigator" var="kNavigator"> 
 	<ons-page id="page-alergenos">
 		<ons-toolbar>
-			<div class="left">   
-				<ons-toolbar-button onclick="kNavigator.pushPage('info.html', {closeMenu: true})" class="bottom-menu-item">
-					<ons-icon icon="fa-chevron-left"></ons-icon>
-				</ons-toolbar-button>        
-			</div>			
+			<div class="left"><ons-back-button></ons-back-button></div>     			
 
 			<div class="center white"><span id="search-text" class="trn" data-trn-key="Información sobre alérgenos">Información sobre alérgenos</span></div> 
 		</ons-toolbar>
@@ -362,7 +351,6 @@
 				<p style="text-align: justify;">La relación jurídica correspondiente a la compraventa de los Productos es entre el Comprador y el Restaurante que realiza su pedido. <em>La Olla Chica</em> no tiene ningún control sobre los Restaurantes ni sobre los Productos o servicios que ofrecen, y en consecuencia <em>La Olla Chica</em> no asume ninguna responsabilidad que pudiera corresponder a los Restaurantes.</p>
 			</div>
 	</ons-page>
-</ons-navigator>
 </script>
 
 <!-- ********** END INFORMACION ********** -->
