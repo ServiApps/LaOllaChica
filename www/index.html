@@ -144,6 +144,16 @@
 					<ons-icon icon="ion-medkit"> Información sobre Alergenos</ons-icon>
 				</div>
 			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="kNavigator.pushPage('ayuda.html', {closeMenu: true})" class="bottom-menu-item">
+				<div class="center" style="font-size: 80%;>
+					<ons-icon icon="ion-medkit"> Dudas y consultas</ons-icon>
+				</div>
+			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="kNavigator.pushPage('contacto.html', {closeMenu: true})" class="bottom-menu-item">
+				<div class="center" style="font-size: 80%;>
+					<ons-icon icon="ion-medkit"> Contacto</ons-icon>
+				</div>
+			</ons-list-item>
 		</ons-list>
 	</ons-page>
  </ons-navigator>
@@ -340,7 +350,7 @@
 		<ons-toolbar>
 			<div class="left"><ons-back-button></ons-back-button></div>     			
 
-			<div class="center white"><span id="search-text" class="trn" data-trn-key="Información sobre alérgenos">Información sobre alérgenos</span></div> 
+			<div class="center white"><span id="search-text" class="trn" data-trn-key="Información alérgenos">Información alérgenos</span></div> 
 		</ons-toolbar>
 	
 			<div class="wrapper center" style="margin: 5px;">
@@ -352,6 +362,37 @@
 			</div>
 	</ons-page>
 </script>
+
+<script type="text/ons-template" id="ayuda.html">   
+	<ons-page id="page-alergenos">
+		<ons-toolbar>
+			<div class="left"><ons-back-button></ons-back-button></div>     			
+
+			<div class="center white"><span id="search-text" class="trn" data-trn-key="Incidencias Pedidos">Incidencias Pedidos</span></div> 
+		</ons-toolbar>
+	
+			<div class="wrapper center" style="margin: 5px;">
+				<p style="text-align: justify;">Si ha realizado un pedido y detecta una incidencia, o simplemente deseas realizarnos una consulta, puede escribirnos a 
+				<a href="mailto:info@laollachica.es">info@laollachica.es</a> o al whatsapp 635041509  indicando su nombre, nº de pedido, nº de teléfono, asi como una breve 
+				descripción de la incidencia y nos pondremos en contacto con usted a la mayor brevedad.</p>	
+			</div>
+	</ons-page>
+</script>
+
+<script type="text/ons-template" id="contacto.html">   
+	<ons-page id="page-alergenos">
+		<ons-toolbar>
+			<div class="left"><ons-back-button></ons-back-button></div>     			
+
+			<div class="center white"><span id="search-text" class="trn" data-trn-key="Incidencias Pedidos">Contacto</span></div> 
+		</ons-toolbar>
+	
+			<div class="wrapper center" style="margin: 5px;">
+				<iframe width="320px" height="480px" src="http://laollachica.es/store/contact"></iframe>	
+			</div>
+	</ons-page>
+</script>
+
 
 <!-- ********** END INFORMACION ********** -->
 
