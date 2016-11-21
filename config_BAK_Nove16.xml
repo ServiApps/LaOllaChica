@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
-    versionCode = "10"
-    version   = "2.0.1">
+    version   = "2.0">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
@@ -12,7 +10,8 @@
     <author email="cminteractivesl@gmail.com" href="http://www.laollachica.es">
         La Olla Chica
     </author>
-    <!-- ******************* START ICONS ******************* -->
+    
+	<!-- ******************* START ICONS ******************* -->
 	<icon src="icon512.png" />
 	
 	<!-- iPhone / iPod Touch  -->
@@ -59,7 +58,8 @@
 		<icon src="icon.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
 	
 	<!-- ******************* END ICONS ******************* -->
-
+	
+	
 	<!-- ******************* START SPLASH ******************* -->
 	<gap:splash src="splash.png" />
 	
@@ -87,8 +87,7 @@
 	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
 	
 	<!-- ******************* END SPLASH ******************* -->
-
-	
+		
     <content src="index.html" />
                
 	<preference name="orientation" value="portrait" />
@@ -113,7 +112,7 @@
 	<gap:plugin name="cordova-plugin-media" source="npm" />	
 	<gap:plugin name="cordova.plugins.diagnostic" source="npm" />	
 	
-	<gap:plugin name="cordova-plugin-googlemaps"  source="npm" >
+	<gap:plugin name="cordova-plugin-googlemaps" source="npm" >
 	   <param name="API_KEY_FOR_ANDROID" value="XXX" />
 	   <param name="API_KEY_FOR_IOS" value="XXX" />
 	</gap:plugin>
@@ -131,6 +130,5 @@
         <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true" />
         <application android:theme="@android:style/Theme.NoTitleBar" >            
         </application>        
-    </gap:config-file>    
-    
+    </gap:config-file>  
 </widget>
