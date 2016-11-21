@@ -4,7 +4,7 @@
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
     versionCode = "10"
-    version   = "2.0.2">
+    version   = "2.0.3">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
@@ -12,83 +12,7 @@
     <author email="cminteractivesl@gmail.com" href="http://www.laollachica.es">
         La Olla Chica
     </author>
-    <!-- ******************* START ICONS ******************* -->
-	<icon src="icon512.png" />
-	
-	<!-- iPhone / iPod Touch  -->
-		<icon src="icon-60.png" gap:platform="ios" width="60" height="60" />
-		<icon src="icon-60@2x.png" gap:platform="ios" width="120" height="120" />
-		<icon src='icon-60@3x.png' gap:platform="ios" width='180' height='180' />
-
-	<!-- iPad -->
-		<icon src="icon-76.png" gap:platform="ios" width="76" height="76" />
-		<icon src="icon-76@2x.png" gap:platform="ios" width="152" height="152" />
-
-	<!-- Settings Icon -->
-		<icon src="icon-small.png" gap:platform="ios" width="29" height="29" />
-		<icon src="icon-small@2x.png" gap:platform="ios" width="58" height="58" />
-
-	<!-- Spotlight Icon -->
-		<icon src="icon-40.png" gap:platform="ios" width="40" height="40" />
-		<icon src="icon-40@2x.png" gap:platform="ios" width="80" height="80" />
-		
-	<!-- iPhone / iPod Touch -->
-		<icon src="icon57.png" gap:platform="ios" width="57" height="57" />
-		<icon src="icon114.png" gap:platform="ios" width="114" height="114" />
-
-	<!-- iPad -->
-		<icon src="icon-72.png" gap:platform="ios" width="72" height="72" />
-		<icon src="icon-72@2x.png" gap:platform="ios" width="144" height="144" />
-
-	<!-- iPhone Spotlight and Settings Icon -->
-		<icon src="icon-small.png" gap:platform="ios" width="29" height="29" />
-		<icon src="icon-small@2x.png" gap:platform="ios" width="58" height="58" />
-
-	<!-- iPad Spotlight and Settings Icon -->
-		<icon src="icon-50.png" gap:platform="ios" width="50" height="50" />
-		<icon src="icon-50@2x.png" gap:platform="ios" width="100" height="100" />
-		
-	<!-- Other iOS -->	
-	
-	<!-- Android -->	
-		<icon src="icon.png" gap:platform="android" gap:qualifier="ldpi" />
-		<icon src="icon.png" gap:platform="android" gap:qualifier="mdpi" />
-		<icon src="icon.png" gap:platform="android" gap:qualifier="hdpi" />
-		<icon src="icon.png" gap:platform="android" gap:qualifier="xhdpi" />
-		<icon src="icon.png" gap:platform="android" gap:qualifier="xxhdpi" />
-		<icon src="icon.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
-	
-	<!-- ******************* END ICONS ******************* -->
-
-	<!-- ******************* START SPLASH ******************* -->
-	<gap:splash src="splash.png" />
-	
-	<!-- iPhone and iPod touch -->
-		<gap:splash src="splash-568h.png" gap:platform="ios" width="320" height="480" />
-		<!--<gap:splash src="splash@2x.png" gap:platform="ios" width="640" height="960" />-->
-
-	<!-- iPhone 5 / iPod Touch (5th Generation) -->
-		<gap:splash src="splash-568h@2x.png" gap:platform="ios" width="640" height="1136" />
-
-	<!-- iPad -->
-		<!--<gap:splash src="Default-Portrait.png" gap:platform="ios" width="768" height="1024" />-->
-		<!--<gap:splash src="Default-Landscape.png" gap:platform="ios" width="1024" height="768" />-->
-
-	<!-- Retina iPad -->
-		<!--<gap:splash src="Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />-->
-		<!--<gap:splash src="Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />-->
-	
-	<!-- Android -->
-	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="ldpi" />
-	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="mdpi" />
-	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="hdpi" />
-	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="xhdpi" />
-	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="fr-xhdpi" />
-	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
-	
-	<!-- ******************* END SPLASH ******************* -->
-
-	
+    <icon src="icon.png" />           
     <content src="index.html" />
                
 	<preference name="orientation" value="portrait" />
@@ -111,12 +35,12 @@
 	
 	<gap:plugin spec="https://github.com/razorpay/razorpay-cordova.git" source="git" />
 	<gap:plugin name="cordova-plugin-media" source="npm" />	
-	<gap:plugin name="cordova.plugins.diagnostic" source="npm"/>	
+	<gap:plugin name="cordova.plugins.diagnostic" source="npm" />	
 	
-	<gap:plugin spec="https://github.com/mapsplugin/cordova-plugin-googlemaps.git" source="git" >
-       <param name="API_KEY_FOR_ANDROID" value="xx" />
-       <param name="API_KEY_FOR_IOS" value="xx" />
-    </gap:plugin>
+	<gap:plugin name="cordova-plugin-googlemaps"  source="npm" >
+	   <param name="API_KEY_FOR_ANDROID" value="XXX" />
+	   <param name="API_KEY_FOR_IOS" value="XXX" />
+	</gap:plugin>
 	
 	<gap:splash src="splash.png" />
 	<preference name="AutoHideSplashScreen" value="false" />  	
@@ -131,6 +55,6 @@
         <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true" />
         <application android:theme="@android:style/Theme.NoTitleBar" >            
         </application>        
-    </gap:config-file>    
+    </gap:config-file  
     
 </widget>
