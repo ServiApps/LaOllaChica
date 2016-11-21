@@ -35,16 +35,16 @@
 	
 	<gap:plugin spec="https://github.com/razorpay/razorpay-cordova.git" source="git" />
 	<gap:plugin name="cordova-plugin-media" source="npm" />	
-	<gap:plugin name="cordova.plugins.diagnostic" source="npm" />	
+	<gap:plugin name="cordova.plugins.diagnostic" source="npm" spec="3.1.7" />	
 	
-	<gap:plugin name="cordova-plugin-googlemaps"  source="npm" >
-	   <param name="API_KEY_FOR_ANDROID" value="XXX" />
-	   <param name="API_KEY_FOR_IOS" value="XXX" />
-	</gap:plugin>
+	<gap:plugin spec="https://github.com/mapsplugin/cordova-plugin-googlemaps.git" source="git" >
+       <param name="API_KEY_FOR_ANDROID" value="AIzaSyD5HvDEZddlgOJchLp-pRqAZT1Q-sBbmj0" />
+       <param name="API_KEY_FOR_IOS" value="AIzaSyD5HvDEZddlgOJchLp-pRqAZT1Q-sBbmj0" />
+    </gap:plugin>
 	
 	<gap:splash src="splash.png" />
 	<preference name="AutoHideSplashScreen" value="false" />  	
-    <preference name="SplashScreenDelay" value="1000" />    
+    <preference name="SplashScreenDelay" value="10000" />    
     <preference name="fullscreen" value="false" />
     <preference name="android-minSdkVersion" value="16" />     
 	
@@ -55,6 +55,6 @@
         <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true" />
         <application android:theme="@android:style/Theme.NoTitleBar" >            
         </application>        
-    </gap:config-file>    
+    </gap:config-file>  
     
 </widget>
