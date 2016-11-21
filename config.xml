@@ -4,7 +4,7 @@
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
     versionCode = "10"
-    version   = "2.0.5">
+    version   = "2.0.6">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
@@ -44,7 +44,7 @@
 	
 	<gap:splash src="splash.png" />
 	<preference name="AutoHideSplashScreen" value="false" />  	
-    <preference name="SplashScreenDelay" value="1000" />    
+    <preference name="SplashScreenDelay" value="10000" />    
     <preference name="fullscreen" value="false" />
     <preference name="android-minSdkVersion" value="16" />     
 	
