@@ -4,7 +4,7 @@
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
     versionCode = "10"
-    version   = "2.0.4">
+    version   = "2.0.5">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
@@ -35,11 +35,11 @@
 	
 	<gap:plugin spec="https://github.com/razorpay/razorpay-cordova.git" source="git" />
 	<gap:plugin name="cordova-plugin-media" source="npm" />	
-	<gap:plugin name="cordova.plugins.diagnostic" source="npm" />	
+	<gap:plugin name="cordova.plugins.diagnostic" source="npm" spec="3.1.7" />	
 	
 	<gap:plugin spec="https://github.com/mapsplugin/cordova-plugin-googlemaps.git" source="git" >
-       <param name="API_KEY_FOR_ANDROID" value="xx" />
-       <param name="API_KEY_FOR_IOS" value="xx" />
+       <param name="API_KEY_FOR_ANDROID" value="AIzaSyD5HvDEZddlgOJchLp-pRqAZT1Q-sBbmj0" />
+       <param name="API_KEY_FOR_IOS" value="AIzaSyD5HvDEZddlgOJchLp-pRqAZT1Q-sBbmj0" />
     </gap:plugin>
 	
 	<gap:splash src="splash.png" />
