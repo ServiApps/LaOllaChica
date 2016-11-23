@@ -1,8 +1,8 @@
 
 var krms_config ={	
-	'ApiUrl' : "YOUR_API_URL",
-	'DialogDefaultTitle' : "YOUR_OWN_DIALOG_TITLE",
-	'pushNotificationSenderid' : "YOUR_ANDROID_PUSH_PROJECT_ID",
+	'ApiUrl':"http://laollachica.es/mobileapp/api",
+	'DialogDefaultTitle':"LA OLLA CHICA",
+	'pushNotificationSenderid':"581444191568",
 	'facebookAppId' : "YOUR_FACEBOOK_APP_ID",
-	'APIHasKey' : "YOUR API HASH KEY (OPTIONAL)"
+	'APIHasKey' : "8ce0bc335f6f11e0ff1277230a00a762"
 };
