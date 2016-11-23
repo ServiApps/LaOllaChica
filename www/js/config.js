@@ -4,5 +4,5 @@ var krms_config ={
 	'DialogDefaultTitle':"LA OLLA CHICA",
 	'pushNotificationSenderid':"581444191568",
 	'facebookAppId' : "YOUR_FACEBOOK_APP_ID",
-	'APIHasKey' : "8ce0bc335f6f11e0ff1277230a00a762"
+	'APIHasKey' : "OPTIONAL"
 };
