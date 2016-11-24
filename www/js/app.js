@@ -3197,16 +3197,14 @@ function clientRegistration()
 	    onError : function() {      
 	    },	    
 	    onSuccess : function() {     	
-		
-	      //if ($('.iagree-wrap').is(':visible')) {	
-		      //var iagree = $(".iagree:checked").val();
-		      //if(empty(iagree)){
-			  //if ($('.iagree:not(:checked)'){
-			  if(true)
-				onsenAlert( getTrans("You must agree to terms & conditions",'agree_terms') );
-				return;
+
+	      if ($('.iagree-wrap').is(':visible')) {	
+		      var iagree = $(".iagree:checked");	
+		      if(iagree){
+		      	 onsenAlert( getTrans("You must agree to terms & conditions",'agree_terms') );
+		      	 return;
 		      }
-	      //}
+	      }
 	      
 	      // save mobile number
 	      setStorage("customer_contact_number",  $(".contact_phone").val()  );	     
