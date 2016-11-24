@@ -4,7 +4,7 @@
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
     versionCode = "10"
-    version   = "2.0.4">
+    version   = "2.0.5">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
