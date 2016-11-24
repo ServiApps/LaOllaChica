@@ -869,7 +869,7 @@ width:100%;
 .iagree-wrap,
 .manual-address-input
 {
-display:none;
+display:inline; /* none */
 }
 
 .button.orange-btn{
