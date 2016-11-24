@@ -895,9 +895,22 @@
       By creating an account, you agree to receive sms from vendor.</p>            
       
       <div class="field-wrapper iagree-wrap">
+	  
+		<ons-list-item modifier="tappable" class="delivery_asap_wrap">
+			<label class="checkbox">
+				<input type="checkbox" name="iagree" class="iagree" value="1" data-validation="required" data-validation-error-msg="this field is mandatory!">
+				<div class="checkbox__checkmark"></div>
+				<span class="ons-checkbox-inner small-font-dim trn" data-trn-key="terms_n_condition">
+				I Agree To The Terms & Conditions & Cookies
+				</span>
+			</label>
+		</ons-list-item>
+	  
+	  <!--
          <ons-row>
            <ons-col width="40px">
-           
+           	   
+		   
            <label class="checkbox">
 			  <input type="checkbox" name="iagree" class="iagree" value="1">
 			  <div class="checkbox__checkmark"></div>
@@ -908,6 +921,7 @@
            <ons-col >
              <span class="trn small-font-dim top15 block" data-trn-key="terms_n_condition">I Agree To The Terms & Conditions & Cookies</span>
            </ons-col>
+		   -->
          </ons-row>
       </div>
          
