@@ -3199,8 +3199,8 @@ function clientRegistration()
 	    onSuccess : function() {     	
 
 	      if ($('.iagree-wrap').is(':visible')) {	
-		      var iagree = $(".iagree:checked");	
-		      if(iagree){
+		      var iagree = $(".iagree:checked").val();	
+		      if($(".iagree:checked")){
 		      	 onsenAlert( getTrans("You must agree to terms & conditions",'agree_terms') );
 		      	 return;
 		      }
