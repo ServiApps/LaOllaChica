@@ -3199,10 +3199,12 @@ function clientRegistration()
 	    onSuccess : function() {     	
 		
 	      //if ($('.iagree-wrap').is(':visible')) {	
-		      var iagree = $(".iagree:checked");
-		      if(!iagree){
-		      	 onsenAlert( getTrans("You must agree to terms & conditions",'agree_terms') );
-		      	 return;
+		      //var iagree = $(".iagree:checked").val();
+		      //if(empty(iagree)){
+			  //if ($('.iagree:not(:checked)'){
+			  if(true)
+				onsenAlert( getTrans("You must agree to terms & conditions",'agree_terms') );
+				return;
 		      }
 	      //}
 	      
