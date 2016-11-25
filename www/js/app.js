@@ -3194,7 +3194,8 @@ function clientRegistration()
 	$.validate({ 	
 	    form : '#frm-checkoutsignup',    
 	    borderColorOnError:"#FF0000",
-	    onError : function() {      
+	    onError : function() {
+			onsenAlert("ERROR");
 	    },	    
 	    onSuccess : function() {     	
 		onsenAlert("Hola");
