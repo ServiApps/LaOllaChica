@@ -3198,13 +3198,13 @@ function clientRegistration()
 	    },	    
 	    onSuccess : function() {     	
 
-	      //if ($('.iagree-wrap').is(':visible')) {	
-		      var iagree = $(".iagree:checked").val();
-		      //if(empty(iagree){
-		      	 onsenAlert(getTrans("You must agree to terms & conditions",'agree_terms') );
+	      if ($('.iagree-wrap').is(':visible')) {	
+		      var iagree = $(".iagree:checked").val();	
+		      if(empty(iagree){
+		      	 onsenAlert( getTrans("You must agree to terms & conditions",'agree_terms') );
 		      	 return;
-		      //}
-	      //}
+		      }
+	      }
 	      
 	      // save mobile number
 	      setStorage("customer_contact_number",  $(".contact_phone").val()  );	     
