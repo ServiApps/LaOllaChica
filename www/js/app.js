@@ -3200,11 +3200,10 @@ function clientRegistration()
 
 	      //if ($('.iagree-wrap').is(':visible')) {	
 		      var iagree = $(".iagree:checked").val();
-				onsenAlert(iagree);
-		      if(empty(iagree){
+		      //if(empty(iagree){
 		      	 onsenAlert(getTrans("You must agree to terms & conditions",'agree_terms') );
 		      	 return;
-		      }
+		      //}
 	      //}
 	      
 	      // save mobile number
