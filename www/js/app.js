@@ -3156,17 +3156,13 @@ function clientRegistration() {
         form: '#frm-checkoutsignup',
         borderColorOnError: "#FF0000",
         onError: function () {
-            onsenAlert("ERROR");
         },
         onSuccess: function () {
-            onsenAlert("Hola");
-            if ($('.iagree-wrap').is(':visible')) {
-                var iagree = $(".iagree:checked").val();
-                onsenAlert(iagree);
-                if (empty(iagree)) {
-                    onsenAlert(getTrans("You must agree to terms & conditions", 'agree_terms'));
-                    return;
-                }
+
+            var iagree = $("#frm-checkoutsignup .iagree-wrap .iagree:checked").val();
+            if (empty(iagree)) {
+                onsenAlert(getTrans("You must agree to terms & conditions", 'agree_terms'));
+                return false;
             }
 
             // save mobile number
