@@ -23,6 +23,7 @@ var track_order_map_interval;
 var drag_marker_bounce = 1;
 
 var debugVAR = false;
+var startPageFromURL_Interval = false;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -378,6 +379,12 @@ document.addEventListener("pageinit", function (e) {
 
             $("#s").attr("placeholder", getTrans('Street Address,City,State', 'home_search_placeholder'));
 
+
+            if(window.location.hash){
+                setStorage("redsys_verify",true);
+                menu.setMainPage('browseRestaurant.html', {closeMenu: false});
+                startPageFromURL_Interval = setInterval(startPageFromURL, 200);
+            }
             break;
 
         case "page-filter-options":
@@ -986,6 +993,11 @@ function callAjax(action, params) {
 
                                 break;
 
+                            case "sys_init":
+                                setStorage("total_w_tax_pretty",data.details.payment_details.total_w_tax_pretty);
+                                callAjax("GetRedsysVars","order_id=" + data.details.order_id+"&origin="+window.location.origin);
+                                break;
+
                             default:
                                 var options = {
                                     animation: 'slide',
@@ -1004,7 +1016,27 @@ function callAjax(action, params) {
                                 break;
                         }
                         break;
+                    case "GetRedsysVars":
+                        $('body').append(data.details.redsys);
+                        document.getElementById("send_redsys").click();
+                        break;
 
+                    case "RedSysVerify":
+                        if(data['msg'] == "ok"){
+                            var options = {
+                                animation: 'slide',
+                                onTransitionEnd: function () {
+                                    displayMerchantLogo2(getStorage("merchant_logo"),
+                                        getStorage("total_w_tax_pretty"),
+                                        'page-receipt');
+                                    $(".receipt-msg").html("Your order has been placed. Reference #"+getStorage("order_id"));
+                                }
+                            };
+                            document.location.hash = "";
+                            removeStorage("redsys_verify");
+                            sNavigator.pushPage("receipt.html", options);
+                        }
+                        break;
                     case "paypalSuccessfullPayment":
                     case "PayAtz":
                     case "PayStp":
@@ -1690,6 +1722,13 @@ function callAjax(action, params) {
                         sNavigator.popPage({cancelIfRunning: true}); //back button
                         break;
 
+                    case "RedSysVerify":
+                        document.location.hash = "";
+                        removeStorage("redsys_verify");
+                        setHome();
+                        onsenAlert(data.msg);
+                        break;
+
                     default:
                         onsenAlert(data.msg);
                         break;
@@ -1699,7 +1738,7 @@ function callAjax(action, params) {
         },
         error: function (request, error) {
             hideAllModal();
-            if (action == "getLanguageSettings" || action == "registerMobile") {
+            if (action == "getLanguageSettings" || action == "registerMobile" || getStorage("redsys_verify")) {
             } else {
                 //onsenAlert( getTrans("Network error has occurred please try again!",'network_error') );
                 toastMsg(getTrans("Network error has occurred please try again!", 'network_error'));
@@ -3310,7 +3349,7 @@ function placeOrder() {
 /*sliding menu*/
 ons.ready(function () {
     menu.on('preopen', function () {
-        console.log("Menu page is going to open");
+        dump("Menu page is going to open");
 
         if (isLogin()) {
             dump('logon ok');
@@ -4922,18 +4961,18 @@ function exitKApp() {
 function imageLoaded(div_id) {
     $(div_id).imagesLoaded()
         .always(function (instance) {
-            console.log('all images loaded');
+            dump('all images loaded');
         })
         .done(function (instance) {
-            console.log('all images successfully loaded');
+            dump('all images successfully loaded');
         })
         .fail(function () {
-            console.log('all images loaded, at least one is broken');
+            dump('all images loaded, at least one is broken');
         })
         .progress(function (instance, image) {
             var result = image.isLoaded ? 'loaded' : 'broken';
             image.img.parentNode.className = image.isLoaded ? '' : 'is-broken';
-            console.log('image is ' + result + ' for ' + image.img.src);
+            dump('image is ' + result + ' for ' + image.img.src);
         });
 }
 
@@ -4948,7 +4987,7 @@ function limitText(field, maxChar) {
         val = ref.val();
     if (val.length >= maxChar) {
         ref.val(function () {
-            //console.log(val.substr(0, maxChar))
+            //dump(val.substr(0, maxChar))
             return val.substr(0, maxChar);
         });
     }
@@ -6244,5 +6283,32 @@ function fillShippingAddress() {
 
         $(".google_lat").val(getStorage("google_lat"));
         $(".google_lng").val(getStorage("google_lng"));
+    }
+}
+
+function startPageFromURL(){
+    if(typeof(sNavigator)!= "undefined"){
+
+        dump("detect sNavigator");
+        clearInterval(startPageFromURL_Interval);
+        var hash = document.location.hash.split("#");
+        var data = {};
+
+        $.each(hash,function(key, value){
+            var tmp = value.split("=");
+            data[tmp[0]] = tmp[1];
+        });
+
+        dump(data);
+
+        if(data['action']){
+            switch (data['action']){
+                case "redsys_mobile":
+                    callAjax("RedSysVerify",document.location.hash.split("params=")[1].replace("?","")+"&status="+data['status']+"&id="+data['order_id']);
+                    break;
+            }
+        }
+    }else{
+        dump("not detect sNavigator")
     }
 }
