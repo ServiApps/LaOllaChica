@@ -4,7 +4,7 @@
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
     versionCode = "960"
-    version   = "2.1>
+    version   = "2.1">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
@@ -13,24 +13,56 @@
         La Olla Chica
     </author>
     
+	<!-- ******************* START ICONS ******************* -->
 	<icon src="icon.png" />
-	<!-- START icons for ios -->
-	<platform name = 'ios'>
-		<icon src='icon-40.png' platform='ios' width='40' height='40' />
-		<icon src='icon-40@2x.png' platform='ios' width='80' height='80' />
-		<icon src='icon-60.png' platform='ios' width='60' height='60' />
-		<icon src='icon-60@2x.png' platform='ios' width='120' height='120' />
-		<icon src='icon-60@3x.png' platform='ios' width='180' height='180' />
-		<icon src='icon-72@.png' platform='ios' width='72' height='72' />
-		<icon src='icon-72@2x.png' platform='ios' width='144' height='144' />
-		<icon src='icon-76.png' platform='ios' width='76' height='76' />
-		<icon src='icon-76@2x.png' platform='ios' width='152' height='152' />
-		<icon src='icon-small.png' platform='ios' width='29' height='29' />
-		<icon src='icon-small@2x.png' platform='ios' width='58' height='58' />
-		<icon src='icon57.png' platform='ios' width='57' height='57' />
-		<icon src='icon57@2x.png' platform='ios' width='114' height='114' />
-	</platform>
-	<!-- END icons for ios -->
+	
+	<!-- iPhone / iPod Touch  -->
+		<icon src="icon-60.png" gap:platform="ios" width="60" height="60" />
+		<icon src="icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+		<icon src='icon-60@3x.png' gap:platform="ios" width='180' height='180' />
+
+	<!-- iPad -->
+		<icon src="icon-76.png" gap:platform="ios" width="76" height="76" />
+		<icon src="icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+
+	<!-- Settings Icon -->
+		<icon src="icon-small.png" gap:platform="ios" width="29" height="29" />
+		<icon src="icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+	<!-- Spotlight Icon -->
+		<icon src="icon-40.png" gap:platform="ios" width="40" height="40" />
+		<icon src="icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+		
+	<!-- iPhone / iPod Touch -->
+		<icon src="icon.png" gap:platform="ios" width="57" height="57" />
+		<icon src="icon@2x.png" gap:platform="ios" width="114" height="114" />
+
+	<!-- iPad -->
+		<icon src="icon-72.png" gap:platform="ios" width="72" height="72" />
+		<icon src="icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+
+	<!-- iPhone Spotlight and Settings Icon -->
+		<icon src="icon-small.png" gap:platform="ios" width="29" height="29" />
+		<icon src="icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+	<!-- iPad Spotlight and Settings Icon -->
+		<icon src="icon-50.png" gap:platform="ios" width="50" height="50" />
+		<icon src="icon-50@2x.png" gap:platform="ios" width="100" height="100" />
+		
+	<!-- Other iOS -->
+		<icon src='icon57.png' gap:platform="ios" width='57' height='57' />
+		<icon src='icon57@2x.png' gap:platform="ios" width='114' height='114' />	
+	
+	<!-- ******************* END ICONS ******************* -->
+	
+	
+	<!-- ******************* START SPLASH ******************* -->
+	<gap:splash src="splash.png" />
+	
+	<!-- iPhone and iPod touch -->
+		<gap:splash src="splash-568h.png" gap:platform="ios" width="320" height="480" />
+	
+	<!-- ******************* END SPLASH ******************* -->
     <content src="index.html" />
                
 	<preference name="orientation" value="portrait" />
