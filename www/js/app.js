@@ -23,7 +23,7 @@ var track_order_map_interval;
 var drag_marker_bounce = 1;
 
 var debugVAR = false;
-var startPageFromURL_Interval = false;
+
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -379,12 +379,6 @@ document.addEventListener("pageinit", function (e) {
 
             $("#s").attr("placeholder", getTrans('Street Address,City,State', 'home_search_placeholder'));
 
-
-            if(window.location.hash){
-                setStorage("redsys_verify",true);
-                menu.setMainPage('browseRestaurant.html', {closeMenu: false});
-                startPageFromURL_Interval = setInterval(startPageFromURL, 200);
-            }
             break;
 
         case "page-filter-options":
@@ -1019,9 +1013,10 @@ function callAjax(action, params) {
                     case "GetRedsysVars":
                         $('body').append(data.details.redsys);
                         document.getElementById("send_redsys").click();
+                        callAjax("RedSysStatus","order_id=" + data.details.order_id);
                         break;
 
-                    case "RedSysVerify":
+                    case "RedSysStatus":
                         if(data['msg'] == "ok"){
                             var options = {
                                 animation: 'slide',
@@ -1035,6 +1030,12 @@ function callAjax(action, params) {
                             document.location.hash = "";
                             removeStorage("redsys_verify");
                             sNavigator.pushPage("receipt.html", options);
+                        }else if(data['msg'] == "ko"){
+                            onsenAlert("Error al pagar con tarjeta");
+                        }else if(data['msg'] == "wait"){
+                            setTimeout(function(){
+                                callAjax("RedSysStatus","order_id=" + getStorage("order_id"));
+                            }, 1000);
                         }
                         break;
                     case "paypalSuccessfullPayment":
@@ -1720,13 +1721,6 @@ function callAjax(action, params) {
                     case "trackOrderHistory":
                     case "loadCC":
                         sNavigator.popPage({cancelIfRunning: true}); //back button
-                        break;
-
-                    case "RedSysVerify":
-                        document.location.hash = "";
-                        removeStorage("redsys_verify");
-                        setHome();
-                        onsenAlert(data.msg);
                         break;
 
                     default:
@@ -6283,32 +6277,5 @@ function fillShippingAddress() {
 
         $(".google_lat").val(getStorage("google_lat"));
         $(".google_lng").val(getStorage("google_lng"));
-    }
-}
-
-function startPageFromURL(){
-    if(typeof(sNavigator)!= "undefined"){
-
-        dump("detect sNavigator");
-        clearInterval(startPageFromURL_Interval);
-        var hash = document.location.hash.split("#");
-        var data = {};
-
-        $.each(hash,function(key, value){
-            var tmp = value.split("=");
-            data[tmp[0]] = tmp[1];
-        });
-
-        dump(data);
-
-        if(data['action']){
-            switch (data['action']){
-                case "redsys_mobile":
-                    callAjax("RedSysVerify",document.location.hash.split("params=")[1].replace("?","")+"&status="+data['status']+"&id="+data['order_id']);
-                    break;
-            }
-        }
-    }else{
-        dump("not detect sNavigator")
     }
 }
