@@ -22,7 +22,7 @@ var track_order_interval;
 var track_order_map_interval;
 var drag_marker_bounce = 1;
 
-var debugVAR = false;
+var debugVAR = true;
 
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -610,6 +610,8 @@ function callAjax(action, params) {
             } else {
                 /*show modal*/
                 switch (action) {
+                    case "RedSysStatus":
+                        break;
                     case "registerMobile":
                         break;
                     case "search":
@@ -988,8 +990,8 @@ function callAjax(action, params) {
                                 break;
 
                             case "sys_init":
-                                setStorage("total_w_tax_pretty",data.details.payment_details.total_w_tax_pretty);
-                                callAjax("GetRedsysVars","order_id=" + data.details.order_id+"&origin="+window.location.origin);
+                                setStorage("total_w_tax_pretty", data.details.payment_details.total_w_tax_pretty);
+                                callAjax("GetRedsysVars", "order_id=" + data.details.order_id + "&origin=" + window.location.origin);
                                 break;
 
                             default:
@@ -1011,30 +1013,35 @@ function callAjax(action, params) {
                         }
                         break;
                     case "GetRedsysVars":
-                        $('body').append(data.details.redsys);
-                        document.getElementById("send_redsys").click();
-                        callAjax("RedSysStatus","order_id=" + data.details.order_id);
+                        $('body')
+                            .append(data.details.redsys)
+                            .append("<iframe style='position:absolute;width:100%;height:100%;left:0;top:0;z-index: 1002;' id='redsys_iframe' name='redsys_iframe'></iframe>");
+                        $("#send_redsys").click();
+                        $("#redsysform").remove();
+                        callAjax("RedSysStatus", "order_id=" + data.details.order_id);
                         break;
 
                     case "RedSysStatus":
-                        if(data['msg'] == "ok"){
+                        if (data['msg'] == "ok") {
                             var options = {
                                 animation: 'slide',
                                 onTransitionEnd: function () {
                                     displayMerchantLogo2(getStorage("merchant_logo"),
                                         getStorage("total_w_tax_pretty"),
                                         'page-receipt');
-                                    $(".receipt-msg").html("Your order has been placed. Reference #"+getStorage("order_id"));
+                                    $(".receipt-msg").html("Your order has been placed. Reference #" + getStorage("order_id"));
                                 }
                             };
-                            document.location.hash = "";
+                            $('#redsys_iframe').remove();
                             removeStorage("redsys_verify");
                             sNavigator.pushPage("receipt.html", options);
-                        }else if(data['msg'] == "ko"){
+                        } else if (data['msg'] == "ko") {
+                            $('#redsys_iframe').remove();
+                            menu.setMainPage('home.html', {closeMenu: true});
                             onsenAlert("Error al pagar con tarjeta");
-                        }else if(data['msg'] == "wait"){
-                            setTimeout(function(){
-                                callAjax("RedSysStatus","order_id=" + getStorage("order_id"));
+                        } else if (data['msg'] == "wait") {
+                            setTimeout(function () {
+                                callAjax("RedSysStatus", "order_id=" + getStorage("order_id"));
                             }, 1000);
                         }
                         break;
