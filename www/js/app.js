@@ -156,7 +156,7 @@ ons.ready(function () {
     }
 
     //getLanguageSettings();
-    setTimeout('getLanguageSettings()', 1100);
+    setTimeout(getLanguageSettings, 1100);
 
     $(document).on("click", "#s", function () {
         $("#s").val('');
@@ -1741,6 +1741,7 @@ function callAjax(action, params) {
         error: function (request, error) {
             hideAllModal();
             if (action == "getLanguageSettings" || action == "registerMobile" || getStorage("redsys_verify")) {
+                console.log(action)
             } else {
                 //onsenAlert( getTrans("Network error has occurred please try again!",'network_error') );
                 toastMsg(getTrans("Network error has occurred please try again!", 'network_error'));
