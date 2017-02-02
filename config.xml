@@ -3,8 +3,8 @@
     xmlns:gap = "http://phonegap.com/ns/1.0"
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
-    versionCode = "975"
-    version   = "2.1.5">
+    versionCode = "980"
+    version   = "2.1.6">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
