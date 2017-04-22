@@ -3,13 +3,13 @@
     xmlns:gap = "http://phonegap.com/ns/1.0"
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "laollachica.cminteractive.eu"
-    versionCode = "995"
-    version   = "2.1.9">
+    versionCode = "996"
+    version   = "2.2.0">
     <name>La Olla Chica</name>
     <description>
         La Olla Chica
     </description>
-    <author email="cminteractivesl@gmail.com" href="http://www.laollachica.es">
+    <author email="cminteractivesl@gmail.com" href="http://www.laollachica.com">
         La Olla Chica
     </author>
     
