@@ -89,13 +89,13 @@
 		
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <!--<gap:plugin name="phonegap-plugin-push" source="npm" spec="1.9.0" />-->
-	<plugin name="phonegap-plugin-push" source="npm" spec="1.9.2">
+	<gap:plugin name="phonegap-plugin-push" source="npm" spec="1.9.2">
 		<param name="SENDER_ID" value="581444191568"/>
-	</plugin>
+	</gap:plugin>
 
     <gap:plugin name="com.paypal.cordova.mobilesdk" source="npm"  />            	
     <gap:plugin name="cordova-plugin-device" source="npm" />		
-	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />		
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />	
 	<gap:plugin name="cordova-plugin-splashscreen" source="npm" />	
 	<gap:plugin name="cordova-plugin-geolocation" source="npm" />
 	<gap:plugin name="cordova-plugin-network-information" source="npm" />
