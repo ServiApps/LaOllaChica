@@ -65,7 +65,7 @@
 	<!-- ******************* END SPLASH ******************* -->
 	
 	<!-- ******************* INFO.PLIST ******************* -->
-	<!-- <platform name="ios">
+	<platform name="ios">
 		<plugin name="cordova-custom-config" version="*"/>
 		<config-file platform="ios" target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
 			<string>My custom message for always using location.</string>
@@ -79,7 +79,7 @@
 		<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription">
 			<string>This app requires access to the camera</string>
 		</config-file>
-	</platform> -->
+	</platform>
 	<!-- ******************* INFO.PLIST ******************* -->
 		
     <content src="index.html" />
